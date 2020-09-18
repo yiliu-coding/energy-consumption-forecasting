@@ -29,12 +29,12 @@ The following results were obtained on the test set:
 | random_forest        |      0.886 | 122.38 |  90.1 | 5.44%  |                                                                   		  | 
 | xgboost              |      0.905 | 112.01 |  82.7 | 4.93%  |                                                                                   | 
 | xgboost              |      0.878 | 126.88 |  96.7 | 5.77%  | Trained with  measured temperature data, tested with forecasted temperature       | 
-| xgboost              |      0.908 | 110.11 |  83   | 4.98%  | Trained and tested on  measured temperature data                                  | 
+| xgboost              |      0.908 | 110.11 |  83   | 4.98%  | Trained and tested with measured temperature data                                 | 
 | recurrent_neural_net |      0.917 | 104.7  |  77.6 | 4.46%  |                                                                                   | 
 
 The forecast errors of the recurrent neural network are illustrated below:
 ![Forecast errors of RNN](plots/NordPool/modelling/errors_rnn.png "RNN forecast errors")
 
-### Conculusions 
+### Conclusions 
 - Out of the tried models, the simple recurrent network (RNN) obtained the best results. Compared to the XGBoost model it also seems the give less biased results.
-- Adding temperature as an input feature to the XGBoost model gave a slightly lower RMSE, but higher MAE and MAPE. This indicaties that using good weather forecasts will reduce some of the larger errors it would otherwise make. Using measured temperatures for training and temperature forecasts for testing obtained worse results than excluding temperature altogether. Using temperature forecasts for both training and testing/inference has not been looked at here, but this should have been done if this model were to be productionized.
+- Adding temperature as an input feature to the XGBoost model gave a slightly lower RMSE, but higher MAE and MAPE. This indicaties that using good weather forecasts will reduce some of the larger errors the model would otherwise make. Using measured temperatures for training and temperature forecasts for testing obtained worse results than excluding temperature altogether. Using temperature forecasts for both training and testing/inference has not been looked at here, but this should have been done if this model were to be productionized.
